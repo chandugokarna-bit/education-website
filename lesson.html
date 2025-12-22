@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <title>ಪಾಠ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+
+<h1 id="lessonTitle">ಪಾಠ</h1>
+
+<div class="box">
+  <ul>
+    <li><a id="videoLink">🎥 ವಿಡಿಯೋ</a></li>
+    <li><a id="pdfLink">📄 PDF</a></li>
+    <li><a id="eresLink">🌐 ಇ-ಸಂಪನ್ಮೂಲಗಳು</a></li>
+  </ul>
+</div>
+
+<a class="back" href="maths-6-7-lessons.html">⬅️ ಹಿಂದಿರುಗಿ</a>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const lesson = params.get("lesson");
+const title = params.get("title");
+
+document.getElementById("lessonTitle").innerText = title;
+
+document.getElementById("videoLink").href = "lesson-video.html?lesson=" + lesson + "&title=" + title;
+document.getElementById("pdfLink").href = "lesson-pdf.html?lesson=" + lesson + "&title=" + title;
+document.getElementById("eresLink").href = "lesson-eresources.html?lesson=" + lesson + "&title=" + title;
+</script>
+
+</body>
+</html>
